@@ -18,7 +18,7 @@ COPY . .
 RUN ./gradlew --no-daemon bootJar -x test
 
 # Runtime stage: use a small distroless Java runtime suitable for Cloud Run
-FROM gcr.io/distroless/java17-debian11:nonroot
+FROM gcr.io/distroless/java21-debian12:nonroot
 ENV PORT 8080
 EXPOSE 8080
 

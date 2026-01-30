@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for building a Gradle Spring Boot app and running on Google Cloud Run
 
 # Build stage: use official Gradle image with JDK
-FROM gradle:8-jdk17 AS builder
+FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /workspace
 
 # Copy wrapper and basic build files first to leverage Docker cache for dependencies

@@ -1,6 +1,16 @@
 package com.spring.animesh.spring_learning.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
     private String name;
     private int age;
 
@@ -11,6 +21,10 @@ public class User {
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
